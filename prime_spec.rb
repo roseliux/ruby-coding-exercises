@@ -1,11 +1,9 @@
 def prime?(number)
 	return false if number <= 1
 	return true if number <= 3
-	
-	(2..number-1).each do |d|
-		return false if number % d == 0
-	end
-	true
+
+  div = (2..number-1).find { |d| number % d == 0 }
+  div.nil?
 end
 
 describe 'prime?' do
